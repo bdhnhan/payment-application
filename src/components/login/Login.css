@@ -5,3 +5,9 @@
     transform: translate(-50%, -50%);
   }
   
+  .centerText {
+    text-align: center;
+    padding-bottom: 10px;
+    color: brown;
+    font-weight: bold;
+  }

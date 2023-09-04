@@ -5,9 +5,10 @@ const { Header, Content, Footer, Sider } = Layout;
 const Nav = () => (
 
     <Layout>
-        <Header style={{ display: 'flex', alignItems: 'center' }}>
+        <Header style={{backgroundColor: 'black', display: 'flex', alignItems: 'center', color: 'white', font: 'Fira Sans', fontSize: '40px' }}>
             <div className="demo-logo" />
             <div class>Payment-Engine</div>
+            <div id = "username" hidden></div>
         </Header>
     </Layout>
 
