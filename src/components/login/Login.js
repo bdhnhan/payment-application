@@ -50,7 +50,10 @@ function Login() {
         }).then(function (res) {
             console.log(res.data);
             if (res.data.status == 200) {
+                console.log(res.data.result);
                 localStorage.setItem("user", values.username);
+                localStorage.setItem("phoneNumber", res.data.result.phoneNumber);
+                localStorage.setItem("userId", res.data.result.id);
                 window.location = "/home"
             } else {
                 document.getElementById('notice').hidden = false;
