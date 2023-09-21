@@ -33,7 +33,7 @@ const submitTransferUser = (values) => {
     }).then(function (res) {
         console.log(res.data);
         if (res.data.status == 200) {
-            waitRefreshBalance(3, res.data.result.transId);
+            waitRefreshBalance(5, res.data.result.transId);
         } else {
         }
     }).catch(function (res) {
@@ -60,7 +60,7 @@ const submitTopUp = (values) => {
     }).then(function (res) {
         console.log(res.data);
         if (res.data.status == 200) {
-            waitRefreshBalance(3, res.data.result.transId);
+            waitRefreshBalance(5, res.data.result.transId);
         } else {
         }
     }).catch(function (res) {
@@ -88,7 +88,7 @@ const submitWithdraw = (values) => {
     }).then(function (res) {
         console.log(res.data);
         if (res.data.status == 200) {
-            waitRefreshBalance(3, res.data.result.transId);
+            waitRefreshBalance(5, res.data.result.transId);
         } else {
         }
     }).catch(function (res) {
@@ -491,7 +491,7 @@ function handleLogOut() {
 
 async function waitRefreshBalance(dem, transId) {
     console.log("waitRefreshBalance dem = " + dem);
-    if (dem == 3) {
+    if (dem == 5) {
         let reloadBalance = ReactDOM.createRoot(document.getElementById("reloadBalance"));
         reloadBalance.render(
             <LoadingOutlined
@@ -515,7 +515,7 @@ async function waitRefreshBalance(dem, transId) {
                 } else if (res.data.result != 'FAILED') {
                     setTimeout(function () {
                         waitRefreshBalance(dem - 1, transId);
-                    }, 3000);
+                    }, 2000);
                 } else if (res.data.result == 'FAILED') {
                     notify('err', res.data.result);
                     let reloadBalance = ReactDOM.createRoot(document.getElementById("reloadBalance"));
